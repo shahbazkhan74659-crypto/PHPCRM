@@ -8,6 +8,8 @@
 - **Web server:** Nginx
 - **Database:** PostgreSQL
 
+**Web server plan:** Nginx is the intended web server, but it is set up later. Until then the app runs on PHP's built-in development server (`php artisan serve`, `http://127.0.0.1:8000`), which serves files and runs PHP in one process and is for local development only. With Nginx, the browser talks to Nginx, which serves static files itself and passes PHP requests to a PHP process (`php-cgi` on Windows, PHP-FPM on Linux); PHP runs Laravel and returns the response through Nginx.
+
 How Vue.js connects to Laravel (Inertia/Vite-served pages, or a separate app calling a Laravel API) is not decided yet.
 
 ## Current Project Structure
